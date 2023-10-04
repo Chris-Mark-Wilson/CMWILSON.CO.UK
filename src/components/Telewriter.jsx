@@ -77,7 +77,7 @@ export const Telewriter = ({ txt, startPos }) => {
 switch (e.nativeEvent.key.toLowerCase()){
     case "1": window.location.replace('https://chriswilsonncnews.netlify.app/');
     break;
-    case"2":window.location.replace('https://github.com/Chris-Mark-Wilson/SafeJourney')
+    case"2":window.location.replace('https://northcoders.slack.com/archives/C05SF09CEDN/p1696444319390519?thread_ts=1696425796.295009&cid=C05SF09CEDN')
     break;
     case"3":window.location.replace('https://sabotage81.onrender.com')
     default:break;
