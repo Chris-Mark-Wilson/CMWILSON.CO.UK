@@ -100,6 +100,12 @@ padding:10px;
 #three{
   background-image: url('/threeButton.png');
 }
+#keyboard{
+  z-index: 3;
+  position:absolute;
+  top:100%;
+  width:100%;
+}
 
 @media only screen and (max-width: 725px) {
   #tv-screen {

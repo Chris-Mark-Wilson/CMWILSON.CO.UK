@@ -137,6 +137,12 @@ export const Telewriter = ({ txt, startPos }) => {
           </button>
         </section>
       )}
+      {window.innerWidth<601 && written && !end &&
+      <img id="keyboard" src={"/ZX81_keyboard.jpg"}
+      onClick={()=>{
+      handleKeyDown("x")
+      }}/>
+      }
       </> 
  
   );
