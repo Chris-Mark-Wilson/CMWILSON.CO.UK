@@ -120,7 +120,7 @@ export const Telewriter = ({ txt, startPos }) => {
           );
         })}
       </div>
-      {window.innerWidth < 601 && end &&(
+      {end &&(
         <section id="buttons">
           <button className="button" id="one" onClick={()=> window.open("https://chriswilsonncnews.netlify.app/","_blank","noreferrer")}>
             
@@ -137,7 +137,7 @@ export const Telewriter = ({ txt, startPos }) => {
           </button>
         </section>
       )}
-      {window.innerWidth<601 && written && !end &&
+      {written && !end &&
       <img id="keyboard" src={"/ZX81_keyboard.jpg"}
       onClick={()=>{
       handleKeyDown("x")
