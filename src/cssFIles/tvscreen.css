@@ -2,6 +2,7 @@
   z-index: 1;
 
   font-family: "zx81";
+  font-weight: bolder;
   position: absolute;
   top: 10%;
   left: 5%;
@@ -62,7 +63,7 @@
   overflow-y: hidden;
   width: 100fr;
 padding:10px;
-  color: rgb(68, 64, 64);
+  color: rgb(29, 28, 28);
   margin: 10px;
   background-color: rgb(211, 204, 194);
   grid-column: 2;
