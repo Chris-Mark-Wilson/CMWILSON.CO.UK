@@ -75,13 +75,13 @@ export const Telewriter = ({ txt, startPos }) => {
       console.dir(window.location);
       switch (e.nativeEvent.key.toLowerCase()) {
         case "1":
-          window.location.replace("https://chriswilsonncnews.netlify.app/");
+          window.open("https://chriswilsonncnews.netlify.app/","_blank","noreferrer");
           break;
         case "2":
-          window.location.replace("https://clipchamp.com/watch/GNvttaH0by6");
+          window.open("https://clipchamp.com/watch/GNvttaH0by6","_blank","noreferrer");
           break;
         case "3":
-          window.location.replace("https://sabotage81.onrender.com");
+          window.open("https://sabotage81.onrender.com","_blank","noreferrer");
         default:
           break;
       }
@@ -89,7 +89,7 @@ export const Telewriter = ({ txt, startPos }) => {
   };
 
   return (
-  
+  <>
       <div id="screen" ref={screenRef} tabIndex={0} onKeyDown={handleKeyDown}>
         {feed.map((paragraph, index) => {
           return (
@@ -111,7 +111,24 @@ export const Telewriter = ({ txt, startPos }) => {
           );
         })}
       </div>
-     
+      {window.innerWidth < 601 && (
+        <section id="buttons">
+          <button className="button" id="one" onClick={()=> window.location.replace("https://chriswilsonncnews.netlify.app/")}>
+            1
+          </button>
+
+          <button className="button" id="two" onClick={()=> {
+            console.log("clicked two")
+            window.location.replace("https://clipchamp.com/watch/GNvttaH0by6")}}>
+            2
+          </button>
+
+          <button className="button" id="three" onClick={()=>    window.location.replace("https://sabotage81.onrender.com")}>
+            3
+          </button>
+        </section>
+      )}
+      </> 
  
   );
 };
