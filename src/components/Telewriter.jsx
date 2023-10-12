@@ -61,8 +61,14 @@ export const Telewriter = ({ txt, startPos }) => {
     setTxtArray(() => txt[block].split("\n"));
   }, [block]);
 
+  useEffect(()=>{
+
+      screenRef.current.focus()
+ 
+  },[block,written])
+
   const handleKeyDown = (e) => {
-    console.log(written);
+    
     if (written) {
       if (txt.length - 1 > block) {
         setBlock(block + 1);
@@ -72,7 +78,7 @@ export const Telewriter = ({ txt, startPos }) => {
       }
     }
     if (written && end) {
-      console.dir(window.location);
+      
       switch (e.nativeEvent.key.toLowerCase()) {
         case "1":
           window.open("https://chriswilsonncnews.netlify.app/","_blank","noreferrer");
@@ -105,26 +111,29 @@ export const Telewriter = ({ txt, startPos }) => {
                 console.log("clicked");
                 screenRef.current.focus();
               }}
+              onLoad={()=>{
+                screenRef.current.focus();
+              }}
             >
               {paragraph}
             </p>
           );
         })}
       </div>
-      {window.innerWidth < 601 && (
+      {window.innerWidth < 601 && end &&(
         <section id="buttons">
-          <button className="button" id="one" onClick={()=> window.location.replace("https://chriswilsonncnews.netlify.app/")}>
-            1
+          <button className="button" id="one" onClick={()=> window.open("https://chriswilsonncnews.netlify.app/","_blank","noreferrer")}>
+            
           </button>
 
           <button className="button" id="two" onClick={()=> {
             console.log("clicked two")
-            window.location.replace("https://clipchamp.com/watch/GNvttaH0by6")}}>
-            2
+            window.open("https://clipchamp.com/watch/GNvttaH0by6","_blank","noreferrer")}}>
+     
           </button>
 
-          <button className="button" id="three" onClick={()=>    window.location.replace("https://sabotage81.onrender.com")}>
-            3
+          <button className="button" id="three" onClick={()=>    window.open("https://sabotage81.onrender.com","_blank","noreferrer")}>
+           
           </button>
         </section>
       )}
