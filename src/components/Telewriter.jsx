@@ -10,7 +10,7 @@ export const Telewriter = ({ txt, startPos }) => {
   const [block, setBlock] = useState(0);
   const [para, setPara] = useState(0);
   const [txtArray, setTxtArray] = useState(txt[0].split("\n"));
-  const[end,setEnd]=useState(false)
+  const [end, setEnd] = useState(false);
   const screenRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +32,6 @@ export const Telewriter = ({ txt, startPos }) => {
   //////////TELEWRITER////////////
   useEffect(() => {
     if (!written) {
-         
       if (index === txtArray[para].length - 1) {
         setPara((para) => para + 1);
         setIndex(() => 0);
@@ -41,7 +40,7 @@ export const Telewriter = ({ txt, startPos }) => {
         setWritten(true);
       }
       if (txtArray[para][index] === "e") {
-        setWritten(true)
+        setWritten(true);
         setEnd(true);
       }
       setFeed((oldFeed) => {
@@ -63,7 +62,7 @@ export const Telewriter = ({ txt, startPos }) => {
   }, [block]);
 
   const handleKeyDown = (e) => {
-    console.log(written)
+    console.log(written);
     if (written) {
       if (txt.length - 1 > block) {
         setBlock(block + 1);
@@ -72,40 +71,47 @@ export const Telewriter = ({ txt, startPos }) => {
         setWritten(false);
       }
     }
-    if(written&&end){
-        console.dir(window.location)
-switch (e.nativeEvent.key.toLowerCase()){
-    case "1": window.location.replace('https://chriswilsonncnews.netlify.app/');
-    break;
-    case"2":window.location.replace('https://clipchamp.com/watch/GNvttaH0by6')
-    break;
-    case"3":window.location.replace('https://sabotage81.onrender.com')
-    default:break;
-}
+    if (written && end) {
+      console.dir(window.location);
+      switch (e.nativeEvent.key.toLowerCase()) {
+        case "1":
+          window.location.replace("https://chriswilsonncnews.netlify.app/");
+          break;
+        case "2":
+          window.location.replace("https://clipchamp.com/watch/GNvttaH0by6");
+          break;
+        case "3":
+          window.location.replace("https://sabotage81.onrender.com");
+        default:
+          break;
+      }
     }
   };
 
   return (
-    <div id="screen" ref={screenRef} tabIndex={0} onKeyDown={handleKeyDown}>
-      {feed.map((paragraph, index) => {
-        return (
-          <p
-            key={index}
-            className="paragraph"
-            style={{
-              position: "relative",
-              top: `${startPos.top}`,
-              left: `${startPos.left}`,
-            }}
-            onClick={() => {
-              console.log("clicked");
-              screenRef.current.focus();
-            }}
-          >
-            {paragraph}
-          </p>
-        );
-      })}
-    </div>
+  
+      <div id="screen" ref={screenRef} tabIndex={0} onKeyDown={handleKeyDown}>
+        {feed.map((paragraph, index) => {
+          return (
+            <p
+              key={index}
+              className="paragraph"
+              style={{
+                position: "relative",
+                top: `${startPos.top}`,
+                left: `${startPos.left}`,
+              }}
+              onClick={() => {
+                console.log("clicked");
+                screenRef.current.focus();
+              }}
+            >
+              {paragraph}
+            </p>
+          );
+        })}
+      </div>
+     
+ 
   );
 };
