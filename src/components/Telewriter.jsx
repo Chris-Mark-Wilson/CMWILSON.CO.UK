@@ -90,7 +90,7 @@ export const Telewriter = ({ txt, startPos }) => {
           window.open("https://sabotage81.onrender.com", "_blank", "noreferrer");
           break;
           case "4":
-            window.open("https://www.npmjs.com/package/silly-cipherm", "_blank", "noreferrer");
+            window.open("https://www.npmjs.com/package/silly-cipher", "_blank", "noreferrer");
             break;
             case "5":
               window.open("https://github.com/Chris-Mark-Wilson/trackme?tab=readme-ov-file#readme", "_blank", "noreferrer");
