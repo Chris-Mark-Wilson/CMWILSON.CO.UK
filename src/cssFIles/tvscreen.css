@@ -4,10 +4,10 @@
   font-family: "zx81";
   font-weight: bolder;
   position: absolute;
-  top: 10vh;
+  top: 0;
   left: 5%;
   width: 675px;
-  height: 60vh;
+  height: 80vh;
 
   display: grid;
   grid-template-columns: 10% 80% 10%;
@@ -17,7 +17,7 @@
 #right,
 #left,
 #bottom,
-#screen {
+#writing {
   background-color: rgb(237, 234, 234);
   z-index: 1;
 }
@@ -57,7 +57,7 @@
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
 }
-#screen {
+#writing {
     z-index: 1;
   justify-content: left;
   overflow-y: hidden;
@@ -69,10 +69,23 @@ padding:10px;
   grid-column: 2;
   grid-row: 2;
 }
+#finished{
+  z-index: 1;
+  justify-content: left;
+  overflow-y: scroll;
+  width: 100fr;
+padding:10px;
+  color: rgb(29, 28, 28);
+  margin: 10px;
+  background-color: rgb(211, 204, 194);
+  grid-column: 2;
+  grid-row: 2;
+}
 .paragraph {
   box-sizing: border-box;
   display: flex;
-
+font-size: 16px;
+line-height: 1.2;
   text-align: start;
   width: 100%;
 }
@@ -89,7 +102,7 @@ padding:10px;
   z-index: 3;
   margin:10%;
   height:40px;
-  width:60px;
+  width:80px;
   border:3px solid black;
 }
 #one{
@@ -101,33 +114,40 @@ padding:10px;
 #three{
   background-image: url('/threeButton.png');
 }
+#four{
+  background-image: url('/fourButton.png');
+}
+#five{
+  background-image: url('/fiveButton.png');
+}
 #keyboard{
   z-index: 3;
   position:absolute;
   top:100%;
-  height:30vh;
+  left:10vw;
+  height:20vh;
 }
 
 @media only screen and (max-width: 725px) {
   #tv-screen {
-    top: 10%;
+ 
     left: 0;
     width: 675px;
   }
 }
 @media only screen and (max-width: 675px) {
     #tv-screen {
-      top: 10%;
+     
       left: 5%;
       width: 575px;
-      height:50%;
+      height:80vh;
       font-size: 12px;
     }
   }
   @media only screen and (max-width: 600px) {
     #tv-screen {
       width: 475px;
-      height:475px;
+      height:80vh;
       font-size: 12px;
     }
   }
@@ -137,7 +157,7 @@ padding:10px;
         top:2%;
         left:0;
       width: 340px;
-      height:340px;
+      height:80vh;
       font-size: 10px;
     }
     #zx81-image{
@@ -146,6 +166,12 @@ padding:10px;
 
         opacity: 30%;
         z-index: 1;
+    }
+    #keyboard{
+   
+      left:0;
+      
+      
     }
     
   }

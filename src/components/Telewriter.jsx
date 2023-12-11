@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { WrittenContext } from "../contexts/WrittenContext";
 
 export const Telewriter = ({ txt, startPos }) => {
-  const timerInterval = 50;
+  const timerInterval = 10;
   const [feed, setFeed] = useState([]);
   const [timer, setTimer] = useState(0);
   const [index, setIndex] = useState(0);
@@ -61,14 +61,14 @@ export const Telewriter = ({ txt, startPos }) => {
     setTxtArray(() => txt[block].split("\n"));
   }, [block]);
 
-  useEffect(()=>{
+  useEffect(() => {
 
-      screenRef.current.focus()
- 
-  },[block,written])
+    screenRef.current.focus()
+
+  }, [block, written])
 
   const handleKeyDown = (e) => {
-    
+
     if (written) {
       if (txt.length - 1 > block) {
         setBlock(block + 1);
@@ -78,16 +78,23 @@ export const Telewriter = ({ txt, startPos }) => {
       }
     }
     if (written && end) {
-      
+
       switch (e.nativeEvent.key.toLowerCase()) {
         case "1":
-          window.open("https://chriswilsonncnews.netlify.app/","_blank","noreferrer");
+          window.open("https://chriswilsonncnews.netlify.app/", "_blank", "noreferrer");
           break;
         case "2":
-          window.open("https://clipchamp.com/watch/GNvttaH0by6","_blank","noreferrer");
+          window.open("https://clipchamp.com/watch/GNvttaH0by6", "_blank", "noreferrer");
           break;
         case "3":
-          window.open("https://sabotage81.onrender.com","_blank","noreferrer");
+          window.open("https://sabotage81.onrender.com", "_blank", "noreferrer");
+          break;
+          case "4":
+            window.open("https://www.npmjs.com/package/silly-cipherm", "_blank", "noreferrer");
+            break;
+            case "5":
+              window.open("https://github.com/Chris-Mark-Wilson/trackme?tab=readme-ov-file#readme", "_blank", "noreferrer");
+              break;
         default:
           break;
       }
@@ -95,8 +102,8 @@ export const Telewriter = ({ txt, startPos }) => {
   };
 
   return (
-  <>
-      <div id="screen" ref={screenRef} tabIndex={0} onKeyDown={handleKeyDown}>
+    <>
+      <div id={!end ? "writing" : "finished"} ref={screenRef} tabIndex={0} onKeyDown={handleKeyDown}>
         {feed.map((paragraph, index) => {
           return (
             <p
@@ -104,14 +111,14 @@ export const Telewriter = ({ txt, startPos }) => {
               className="paragraph"
               style={{
                 position: "relative",
-                top: `${startPos.top}`,
+                top: !end ? `${startPos.top}` : 0,
                 left: `${startPos.left}`,
               }}
               onClick={() => {
                 console.log("clicked");
                 screenRef.current.focus();
               }}
-              onLoad={()=>{
+              onLoad={() => {
                 screenRef.current.focus();
               }}
             >
@@ -120,30 +127,39 @@ export const Telewriter = ({ txt, startPos }) => {
           );
         })}
       </div>
-      {end &&(
+      {end && (
         <section id="buttons">
-          <button className="button" id="one" onClick={()=> window.open("https://chriswilsonncnews.netlify.app/","_blank","noreferrer")}>
-            
+          <button className="button" id="one" onClick={() => window.open("https://chriswilsonncnews.netlify.app/", "_blank", "noreferrer")}>
+
           </button>
 
-          <button className="button" id="two" onClick={()=> {
+          <button className="button" id="two" onClick={() => {
             console.log("clicked two")
-            window.open("https://clipchamp.com/watch/GNvttaH0by6","_blank","noreferrer")}}>
-     
+            window.open("https://clipchamp.com/watch/GNvttaH0by6", "_blank", "noreferrer")
+          }}>
+
           </button>
 
-          <button className="button" id="three" onClick={()=>    window.open("https://sabotage81.onrender.com","_blank","noreferrer")}>
-           
+          <button className="button" id="three" onClick={() => window.open("https://sabotage81.onrender.com", "_blank", "noreferrer")}>
+
+          </button>
+
+          <button className="button" id="four" onClick={() => window.open("https://www.npmjs.com/package/silly-cipher", "_blank", "noreferrer")}>
+
+          </button>
+
+          <button className="button" id="five" onClick={() => window.open("https://github.com/Chris-Mark-Wilson/trackme?tab=readme-ov-file#readme", "_blank", "noreferrer")}>
+
           </button>
         </section>
       )}
       {written && !end &&
-      <img id="keyboard" src={"/ZX81_keyboard.jpg"}
-      onClick={()=>{
-      handleKeyDown("x")
-      }}/>
+        <img id="keyboard" src={"/ZX81_keyboard.jpg"}
+          onClick={() => {
+            handleKeyDown("x")
+          }} />
       }
-      </> 
- 
+    </>
+
   );
 };
