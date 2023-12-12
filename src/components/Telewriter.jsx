@@ -12,6 +12,7 @@ export const Telewriter = ({ txt, startPos }) => {
   const [txtArray, setTxtArray] = useState(txt[0].split("\n"));
   const [end, setEnd] = useState(false);
   const screenRef = useRef(null);
+  const width = window.innerWidth;
 
   useEffect(() => {
     setFeed(() => {
@@ -127,7 +128,7 @@ export const Telewriter = ({ txt, startPos }) => {
           );
         })}
       </div>
-      {end && (
+      {end && width<601&&(
         <section id="buttons">
           <button className="button" id="one" onClick={() => window.open("https://chriswilsonncnews.netlify.app/", "_blank", "noreferrer")}>
 
@@ -153,7 +154,7 @@ export const Telewriter = ({ txt, startPos }) => {
           </button>
         </section>
       )}
-      {written && !end &&
+      {written && !end && width<601&&
         <img id="keyboard" src={"/ZX81_keyboard.jpg"}
           onClick={() => {
             handleKeyDown("x")
