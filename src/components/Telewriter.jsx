@@ -101,6 +101,8 @@ export const Telewriter = ({ txt, startPos }) => {
                 break;
                 case "7":
                   window.open("https://cmwebserveer.ddns.net", "_blank", "noreferrer");
+                  case "8":
+                    window.open("https://www.npmjs.com/package/quickqr", "_blank", "noreferrer");
                   break;
         default:
           break;
