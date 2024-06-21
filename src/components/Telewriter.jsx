@@ -96,6 +96,12 @@ export const Telewriter = ({ txt, startPos }) => {
             case "5":
               window.open("https://github.com/Chris-Mark-Wilson/trackme?tab=readme-ov-file#readme", "_blank", "noreferrer");
               break;
+              case "6":
+                window.open("https://github.com/Chris-Mark-Wilson/android-weather?tab=readme-ov-file#readme", "_blank", "noreferrer");
+                break;
+                case "7":
+                  window.open("https://cmwebserveer.ddns.net", "_blank", "noreferrer");
+                  break;
         default:
           break;
       }
