@@ -85,7 +85,7 @@ export const Telewriter = ({ txt, startPos }) => {
           window.open("https://chriswilsonncnews.netlify.app/", "_blank", "noreferrer");
           break;
         case "2":
-          window.open("https://clipchamp.com/watch/GNvttaH0by6", "_blank", "noreferrer");
+          window.open("https://github.com/Chris-Mark-Wilson/safe-journey-2#safejourney", "_blank", "noreferrer");
           break;
         case "3":
           window.open("https://sabotage81.onrender.com", "_blank", "noreferrer");
