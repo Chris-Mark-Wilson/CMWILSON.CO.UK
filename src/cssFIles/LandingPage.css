@@ -10,11 +10,17 @@
     margin:0;
 height:100%;
     width:100%;
+
+ 
 }
 #zx81-image{
-    
-    width:100%;
+    object-fit:scale-down;
+    width:928px;
+    height:559px;
    /* height:100%; */
     opacity: 50%;
     z-index: 1;
+    position:absolute;
+    top:0;
+    left:0;
 }

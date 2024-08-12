@@ -1,25 +1,41 @@
-#tv-screen {
-  z-index: 1;
-
-  font-family: "zx81";
-  font-weight: bolder;
+.container{
+ z-index:1;
+  perspective: 2000px;
   position: absolute;
   top: 0;
   left: 5%;
-  width: 675px;
-  height: 80vh;
+  opacity:0.8;
+}
 
+#tv-screen {
+  z-index: 9999;
+
+  font-family: "zx81";
+  font-weight:lighter;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 445px;
+  height: 51vh;
+/* perspective: 700px; */
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 10% 80% 10%;
+  transition:transform 3s;
+  transform: rotateY(40deg) rotateX(-3deg) rotateZ(-10deg) translateY(170px) translateX(165px); /* Rotate the element to the side */
+  transform-origin:left; /* Optional: Set the origin of the transformation */
+
 }
 #top,
 #right,
 #left,
 #bottom,
-#writing {
-  background-color: rgb(237, 234, 234);
-  z-index: 1;
+#writing   {
+  background-color: rgb(73, 73, 84);
+  /* z-index: 9998; */
+  /* transform: rotateY(50deg) rotateX(20deg) rotateZ(10deg); /* Rotate the element to the side */
+opacity:1;
 }
 #top {
   position: relative;
@@ -58,16 +74,18 @@
   border-bottom-left-radius: 50%;
 }
 #writing {
-    z-index: 1;
+  border-radius:7px;
+    z-index: 2;
   justify-content: left;
   overflow-y: hidden;
-  width: 100fr;
+  /* width: 100fr; */
 padding:10px;
   color: rgb(29, 28, 28);
   margin: 10px;
-  background-color: rgb(211, 204, 194);
+  background-color: rgb(191, 191, 191);
   grid-column: 2;
   grid-row: 2;
+
 }
 #finished{
   z-index: 1;
