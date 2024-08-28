@@ -3,28 +3,37 @@
   perspective: 2000px;
   position: absolute;
   top: 0;
-  left: 5%;
+  left: 2%;
+  width:100%;
   opacity:0.8;
 }
 
 #tv-screen {
+  border:1px solid red;
   z-index: 9999;
 
   font-family: "zx81";
   font-weight:lighter;
-  font-size: 10px;
-  position: absolute;
-  top: 0;
-  left: 5%;
-  width: 445px;
-  height: 51vh;
-/* perspective: 700px; */
+
+    /* position: absolute; */
+    position:relative;
+  top: 12vw;
+  left:7vw;
+  /* left: 5%; */
+  /* width: 445px;
+  height: 51vh; */
+  width:46vw;
+  height:32vw;
+perspective: 100vw;
   display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: 10% 80% 10%;
-  transition:transform 3s;
-  transform: rotateY(40deg) rotateX(-3deg) rotateZ(-10deg) translateY(170px) translateX(165px); /* Rotate the element to the side */
-  transform-origin:left; /* Optional: Set the origin of the transformation */
+  /* transition:transform 3s; */
+  /*
+  transform: rotateY(40deg) rotateX(-3deg) rotateZ(-10deg) translateY(170px) translateX(165px);*/
+  transform: rotateY(47deg) rotateX(-4deg) rotateZ(-12deg) ;
+
+  /* Optional: Set the origin of the transformation */
 
 }
 #top,
@@ -33,8 +42,7 @@
 #bottom,
 #writing   {
   background-color: rgb(73, 73, 84);
-  /* z-index: 9998; */
-  /* transform: rotateY(50deg) rotateX(20deg) rotateZ(10deg); /* Rotate the element to the side */
+
 opacity:1;
 }
 #top {
@@ -76,8 +84,11 @@ opacity:1;
 #writing {
   border-radius:7px;
     z-index: 2;
+    font-size:5px;
+    color:red;
   justify-content: left;
   overflow-y: hidden;
+  
   /* width: 100fr; */
 padding:10px;
   color: rgb(29, 28, 28);
@@ -93,6 +104,7 @@ padding:10px;
   overflow-y: scroll;
   width: 100fr;
 padding:10px;
+
   color: rgb(29, 28, 28);
   margin: 10px;
   background-color: rgb(211, 204, 194);
@@ -102,7 +114,7 @@ padding:10px;
 .paragraph {
   box-sizing: border-box;
   display: flex;
-font-size: 16px;
+font-size: 10px;
 line-height: 1.2;
   text-align: start;
   width: 100%;
@@ -146,7 +158,7 @@ line-height: 1.2;
   height:20vh;
 }
 
-@media only screen and (max-width: 725px) {
+/* @media only screen and (max-width: 725px) {
   #tv-screen {
  
     left: 0;
@@ -193,4 +205,4 @@ line-height: 1.2;
     }
     
   }
-
+ */

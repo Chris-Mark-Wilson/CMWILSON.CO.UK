@@ -14,9 +14,10 @@ height:100%;
  
 }
 #zx81-image{
-    object-fit:scale-down;
-    width:928px;
-    height:559px;
+    object-fit:cover;
+    width:100%;
+    /* width:928px; */
+    /* height:559px; */
    /* height:100%; */
     opacity: 50%;
     z-index: 1;

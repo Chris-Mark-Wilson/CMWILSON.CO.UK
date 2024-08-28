@@ -14,6 +14,6 @@ export const TvScreen=()=>{
             <Telewriter txt={helloWorld} startPos={{top:"354px",left:"0%"}}/>
             
         </div>
-        </div>
-    )
+       </div>
+           )
 }
