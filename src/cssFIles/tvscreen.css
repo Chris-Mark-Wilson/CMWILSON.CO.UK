@@ -9,7 +9,7 @@
 }
 
 #tv-screen {
-  border:1px solid red;
+  /* border:1px solid red; */
   z-index: 9999;
 
   font-family: "zx81";
@@ -41,7 +41,7 @@ perspective: 100vw;
 #left,
 #bottom,
 #writing   {
-  background-color: rgb(73, 73, 84);
+  background-color: rgba(73, 73, 84,0.1);
 
 opacity:1;
 }
@@ -114,7 +114,7 @@ padding:10px;
 .paragraph {
   box-sizing: border-box;
   display: flex;
-font-size: 10px;
+font-size: 1vw;
 line-height: 1.2;
   text-align: start;
   width: 100%;
