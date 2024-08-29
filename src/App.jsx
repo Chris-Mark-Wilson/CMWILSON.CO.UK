@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <section id="image-container">
-        <img src={zx81desk} id="zx81-image" />
+        <img src={'/zx81desk.png'} id="zx81-image" />
         <TvScreen />
       </section>
     
